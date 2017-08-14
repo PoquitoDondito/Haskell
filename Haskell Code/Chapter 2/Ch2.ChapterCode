@@ -1,0 +1,58 @@
+--2.2
+
+sayHello :: String -> IO ()
+sayHello x = putStrLn ("Hello, " ++ x ++ "!")
+
+Prelude> :load test.hs
+Prelude> sayHello "Haskell"
+Hello, Haskell!
+Prelude>
+
+--2.3
+
+1
+1 + 1
+"Icarus"
+
+Prelude> 1
+1
+
+Prelude> 1 + 2
+3
+
+Prelude> (1 + 2) * 3
+9
+Prelude> ((1 + 2) * 3) + 100
+109
+
+--2.4
+
+Prelude> (1 + 2) * 3
+9
+Prelude> (4 + 5) * 3
+27
+Prelude> (10 + 5) * 3
+45
+
+Prelude> let triple x = x * 3
+triple x = x * 3
+
+Prelude> triple 2
+6
+
+--2.5
+1
+"Icarus"
+
+1 + 1
+2 * 3 + 1
+
+triple 2
+triple 2
+2 * 3
+6
+
+(\f -> (1, 2 + f)) 2
+(2, 2 + 2)
+
+--2.6
