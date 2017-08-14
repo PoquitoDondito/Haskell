@@ -1,0 +1,128 @@
+--2.2
+
+sayHello :: String -> IO ()
+sayHello x = putStrLn ("Hello, " ++ x ++ "!")
+
+Prelude> :load test.hs
+Prelude> sayHello "Haskell"
+Hello, Haskell!
+Prelude>
+
+--2.3
+
+1
+1 + 1
+"Icarus"
+
+Prelude> 1
+1
+
+Prelude> 1 + 2
+3
+
+Prelude> (1 + 2) * 3
+9
+Prelude> ((1 + 2) * 3) + 100
+109
+
+--2.4
+
+Prelude> (1 + 2) * 3
+9
+Prelude> (4 + 5) * 3
+27
+Prelude> (10 + 5) * 3
+45
+
+Prelude> let triple x = x * 3
+triple x = x * 3
+
+Prelude> triple 2
+6
+
+--2.5
+1
+"Icarus"
+
+1 + 1
+2 * 3 + 1
+
+triple 2
+triple 2
+2 * 3
+6
+
+(\f -> (1, 2 + f)) 2
+(1, 2 + 2)
+
+--2.6
+
+Prelude> id 1
+1
+
+Prelude > 1 + 1
+2
+
+Prelude> 100 + 100
+200
+Prelude> 768395 * 21356345
+16410108716275
+Prelude> 123123 / 123
+1001.1
+Prelude> 476 - 36
+440
+Prelude> 10 / 4
+2.5
+
+Prelude> 10 'div' 4
+2
+Prelude> div 10 4
+2
+
+Prelude (+) 100 100
+200
+Prelude> (*) 768395 21356345
+16410108716275
+Prelude> (/) 123123 123
+1001.0
+
+:info (*)
+infixl 7 *
+
+:info (+) (-)
+infixl 6 +
+infixl 6 -
+
+2 * 3 * 4
+(2 * 3) * 4
+
+Prelude> info (^)
+infixr 8 ^
+
+Prelude> 2 ^ 3 ^ 4
+2417851639229258349412352
+Prelude> 2 ^ (3 ^ 4)
+2417851639229258349412352
+Prelude> (2 ^ 3) ^ 4
+4096
+
+2 + 3 * 4
+(2 + 3) * 4
+
+--2.7
+
+Prelude> let y = 10
+Prelude> let x = 10 * 5 + y
+Prelude> let myResult = x * 5
+
+Prelude> x
+60
+Prelude> y
+10
+Prelude> myResult
+300
+
+module Learn where
+x = 10 * 5 + y
+myResult = x * 5
+y = 10
