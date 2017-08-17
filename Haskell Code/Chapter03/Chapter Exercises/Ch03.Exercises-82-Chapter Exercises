@@ -196,3 +196,12 @@ rvrs = putStrLn $ (drop 9 "Curry is awesome") ++
 --mentioned that you can use the $ symbol to avoid using parentheses, too. Try
 --modifying your main function to use that instead of the parentheses.
 --Answer:
+module Reverse where
+
+rvrs :: String -> String
+rvrs x = (drop 9 x) ++
+         (take 4 $ drop 5 x) ++
+         (take 5 x) ++ "."
+
+main :: IO ()
+main = print (rvrs "Curry is awesome")
