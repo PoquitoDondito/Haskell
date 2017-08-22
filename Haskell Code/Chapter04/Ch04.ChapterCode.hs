@@ -112,7 +112,7 @@ Prelude> data Mood = Blah | Woot deriving Show
 Prelude> [Blah, Woot]
 [Blah,Woot]
 Prelude> [Blah, Woot] > [Woot, Blah]
-<interactive>:28:14"
+<interactive>:28:14
     No instance for (Ord Mood) arising
       from a use of '>'
     In the expression: [Blah, Woot] > [Woot, Blah]
