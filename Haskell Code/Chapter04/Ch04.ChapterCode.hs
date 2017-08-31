@@ -1,7 +1,7 @@
 --4.3
 -- the definition of Bool
 data Bool = False | True
-Prelude> :info Bool
+Prelude> :i Bool
 data Bool = False | True
 
 Prelude> :t not
@@ -152,7 +152,7 @@ Prelude> True && True
 True
 -- || is disjunction, so
 -- this means "false or true."
-Prelude> False ||True
+Prelude> False || True
 True
 Prelude> True && False
 False
