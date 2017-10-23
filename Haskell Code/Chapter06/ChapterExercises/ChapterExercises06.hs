@@ -37,5 +37,22 @@ phew = Papu (Rocks "chomskydoz")
 equalityForall :: Papu -> Papu -> Bool
 equalityForall p p' = p == p'
 
-comparePapus :: Papu -> Papu -> Bool
-comparePapus = _
+--Match the Types
+-- 1.
+i :: Num a => a
+i = 1
+--i :: a
+--Cannot be done, since a is just a type variable and needs to have a
+--typeclass to define it
+
+-- 2.
+f :: Fractional a => a
+f = 1.0
+--f :: Num a => a
+--Cannot be done
+
+-- 3.
+--Works
+
+-- 4.
+--Works
