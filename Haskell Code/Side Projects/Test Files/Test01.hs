@@ -1,40 +1,7 @@
 module Test01 where
 
-data TisAnInteger = TisAn Integer
-
-foo :: TisAnInteger
-foo = TisAn 5
-bar :: TisAnInteger
-bar = TisAn 10
-
-instance Eq TisAnInteger where
-  (==) (TisAn x) (TisAn y) = x == y
-
-
---TypeConstructor is the type you are defining
-
---data constructors can take typevaribles or other types
-data TypeConstructor typevariables = DataConstructors
-
-data Person = Person String Int
-
---function type declaration
-david :: Person
---function implementation
-david = Person "David" 5
-
-bryant :: Person
-bryant = Person "Bryant" 4
-
-michael :: Person
-michael = Person "Michael" 3
-
-seth :: Person
-seth = Person "Seth" 2
-
-daniel :: Person
-daniel = Person "Daniel" 1
-
-instance Eq Person where
- (==) (Person nameOne ageOne) (Person nameTwo ageTwo) =
-   (nameOne == nameTwo) && (ageOne == ageTwo)
+--Trying to make a prime factorization program. Once I complete that, I want to
+--find the composition of squares of a certain number, so sqrt 28 -> sqrt 4*7.
+--It would then take the 4 and return the square root of that so that it then
+--returns a square which makes up 28. It should also do multiple squares, such as
+--sqrt of 4*9*7, which would then return 2 and 3
