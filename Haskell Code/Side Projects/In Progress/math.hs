@@ -1,5 +1,7 @@
 module Athena where
 
+import Data.Complex
+
 --Squaring function
 square :: Num a => a -> a
 square x = x * x
