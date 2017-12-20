@@ -1,5 +1,6 @@
 module Test01 where
 
+import Test02
 
 {-This is just a caller function which runs all the other functions,
 useful because I don't want to just call this huge list constantly-}
@@ -31,25 +32,30 @@ it is difficult to know exactly what one is looking at. This made me
 decide to make a more readable version of this function. This one works
 by essentially separating the values and putting them into their
 respective strings-}
+
 findVowles' :: String -> IO ()
 findVowles' x =
-  let upperAs = fst (findAllVowels x !! 0)
-      lowerAs = snd (findAllVowels x !! 0)
-      upperEs = fst (findAllVowels x !! 1)
-      lowerEs = snd (findAllVowels x !! 1)
-      upperIs = fst (findAllVowels x !! 2)
-      lowerIs = snd (findAllVowels x !! 2)
-      upperOs = fst (findAllVowels x !! 3)
-      lowerOs = snd (findAllVowels x !! 3)
-      upperUs = fst (findAllVowels x !! 4)
-      lowerUs = snd (findAllVowels x !! 4)
-   in do putStr ("\nThere are " ++ show upperAs ++ " counts of 'A'")
-         putStr ("\nThere are " ++ show lowerAs ++ " counts of 'a'")
-         putStr ("\nThere are " ++ show upperEs ++ " counts of 'E'")
-         putStr ("\nThere are " ++ show lowerEs ++ " counts of 'e'")
-         putStr ("\nThere are " ++ show upperIs ++ " counts of 'I'")
-         putStr ("\nThere are " ++ show lowerIs ++ " counts of 'i'")
-         putStr ("\nThere are " ++ show upperOs ++ " counts of 'O'")
-         putStr ("\nThere are " ++ show lowerOs ++ " counts of 'o'")
-         putStr ("\nThere are " ++ show upperUs ++ " counts of 'U'")
-         putStr ("\nThere are " ++ show lowerUs ++ " counts of 'u'\n")
+  let upperAs = fst (findAllVowels x !! 0) :: Int
+      lowerAs = snd (findAllVowels x !! 0) :: Int
+      upperEs = fst (findAllVowels x !! 1) :: Int
+      lowerEs = snd (findAllVowels x !! 1) :: Int
+      upperIs = fst (findAllVowels x !! 2) :: Int
+      lowerIs = snd (findAllVowels x !! 2) :: Int
+      upperOs = fst (findAllVowels x !! 3) :: Int
+      lowerOs = snd (findAllVowels x !! 3) :: Int
+      upperUs = fst (findAllVowels x !! 4) :: Int
+      lowerUs = snd (findAllVowels x !! 4) :: Int
+      allVowels = upperAs + lowerAs + upperEs + lowerEs + upperIs +
+                  lowerIs + upperOs + lowerOs + upperUs + lowerUs
+      intToPercent x = 100 * (fromIntegral x) / (fromIntegral allVowels)
+   in do putStrLn ("There are " ++ show upperAs ++ " counts of 'A' | Totalling " ++ show (intToPercent upperAs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show lowerAs ++ " counts of 'a' | Totalling " ++ show (intToPercent lowerAs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show upperEs ++ " counts of 'E' | Totalling " ++ show (intToPercent upperEs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show lowerEs ++ " counts of 'e' | Totalling " ++ show (intToPercent lowerEs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show upperIs ++ " counts of 'I' | Totalling " ++ show (intToPercent upperIs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show lowerIs ++ " counts of 'i' | Totalling " ++ show (intToPercent lowerIs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show upperOs ++ " counts of 'O' | Totalling " ++ show (intToPercent upperOs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show lowerOs ++ " counts of 'o' | Totalling " ++ show (intToPercent lowerOs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show upperUs ++ " counts of 'U' | Totalling " ++ show (intToPercent upperUs) ++ "% of all vowels")
+         putStrLn ("There are " ++ show lowerUs ++ " counts of 'u' | Totalling " ++ show (intToPercent lowerUs) ++ "% of all vowels")
+         putStrLn ("In all, there are " ++ show (allVowels) ++ " vowels")
