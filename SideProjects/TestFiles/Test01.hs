@@ -1,14 +1,24 @@
 module Test01 where
 
+import Dictionary
 import System.Directory
+import Data.List
 import Data.Char
 
-write x = do
-  appendFile "Fun.txt" (show x)
+--tig.txt
 
-display = do
-  x <- readFile "Fun.txt"
-  print x
+search y file = do
+  x <- readFile file
+  return (elemIndices y (words x))
 
-clear = do
-  writeFile "Fun.txt" ""
+searchIndex file = do
+  x <- readFile file
+  return (findIndices (`elem` fullDictionary) (words x))
+
+searchWords file = do
+  x <- readFile file
+  return (filter (`elem` fullDictionary) (words x))
+
+format file = do
+  x <- readFile file
+  return $ lines x
