@@ -112,3 +112,10 @@ roundTripPF = read . show
   dispatch against the String now? Make the expression print (roundTrip 4) work.
   You will only need the has the type syntax of :: and the parantheses for
   scoping. IDK HELP ME-}
+
+roundTrip' :: (Show a, Read b) => a -> b
+roundTrip' = read . show
+
+main' = do
+  print (roundTrip' 4 :: Int)
+  print (id 4)
